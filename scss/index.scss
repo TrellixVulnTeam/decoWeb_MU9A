@@ -1,0 +1,147 @@
+
+h2{
+    display: flex;
+    padding: 50px 10px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    letter-spacing: 3px;
+    color: #000;
+}
+
+.lider{
+    display: flex;
+    flex-direction: row wrap;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    
+    #contain{
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 50px;
+        
+        img{
+         display: flex;
+         width: 200px;
+         height: 200px;
+         border-radius: 150px;
+         margin-bottom: 50px;
+        
+        }
+
+        p{
+            display: inline; 
+            text-align: center; 
+            flex-direction: row wrap;
+            font-family:'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+            
+    } 
+}
+
+
+
+.eqTrabajo{
+    
+    flex-direction: row wrap;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+
+    #eq{
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 150px;
+        margin-bottom: 50px;
+        
+
+        img{
+            display: flex;
+            width: 150px;
+            height: 150px;
+            border-radius: 150px;
+           
+        }
+
+        p{
+            display: inline;  
+            width: 100%;
+            text-align: center;
+            flex-direction: row wrap;
+            font-family:'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+    
+    }
+    
+
+}
+
+
+.clientes{
+
+    display: flex;
+    flex-direction: row wrap;
+    margin-bottom: 100px;
+    margin-top: 300px;
+    width: 100%;
+    height: 200px;
+    align-items: center;
+    justify-content: space-evenly;
+
+    #cli1{
+
+        margin-left: 10px;
+        margin-right: 10px;
+
+
+        p{
+            font-weight: 500;
+            font-size: medium;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+    }
+
+    #cli2{
+
+
+
+        p{
+            font-weight: 500;
+            font-size: medium;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+    }
+
+    #cli3{
+
+
+
+        p{
+            font-weight: 500;
+            font-size: medium;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+    }
+
+
+}
