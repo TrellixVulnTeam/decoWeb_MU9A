@@ -223,12 +223,20 @@ function sumarTotal() {
 
     alert("El monto total de lo solicitado es un aproximado de " + valorFinal + "$")
 
+}
+
+// para unir con html
+function presupuesto(){
+
+    saludar()
+    tamaño()
+    modificacion()
+    calidad()
+    cantidad()
+    sumarTotal()
 
 }
 
-saludar()
-tamaño()
-modificacion()
-calidad()
-cantidad()
-sumarTotal()
+let button = document.getElementById('testButton');
+
+button.addEventListener('click', presupuesto);
