@@ -38,19 +38,45 @@ let agregoMt = 0
 let espacio = 0
 
 
+/* PRUEBA CON SWEETALERT2
 
 function saludar() {
-    do {
-        nombre = prompt("Ingrese su nombre de usuario")
+    
+    Swal
+    .fire({
+        title: "Tu nombre",
+        input: "text",
+        showCancelButton: true,
+        confirmButtonText: "Guardar",
+        cancelButtonText: "Cancelar",
+        inputValidator: nombre => {
+            // Si el valor es válido, debes regresar undefined. Si no, una cadena
+            if (!nombre) {
+                return "Por favor escribe tu nombre";
+            } else {
+                return undefined;
+            }
+        }
+    })
+    .then(resultado => {
+        if (resultado.value) {
+            let nombre = resultado.value;
 
-    } while (nombre == "" || nombre > 0)
+            Swal.fire({
+                text: "Bienvenido " + nombre + " al simulador de DECODEGA!",
+            })
+        }
+    });
+}*/
 
-    alert("Bienvenido " + nombre + " al simulador de presupuestos de diseño de DecoDega")
-    alert("A continuacion debera seleccionar una serie de items que definiran un presupesto estimado de la realizacion del proyecto")
-}
 
 function tamaño() {
     do {
+
+        <input type="text" id="texto" />
+        let valor = document.getElementById("texto").value;
+
+
         alert("Que tipo de modificacion desea realizar?")
         elecOpTam = prompt("Presione 1. 20 a 40mts, 2. 40 a 50mts, 3. Mas de 50mts")
         let elecTamaño = 0 //valor tamaño elegido para sumar
@@ -234,9 +260,17 @@ function presupuesto(){
     calidad()
     cantidad()
     sumarTotal()
+    final()
 
 }
 
 let button = document.getElementById('testButton');
 
 button.addEventListener('click', presupuesto);
+
+//inserto mensaje luego de la realizacion del presupuesto
+function final (){
+const fin = document.createElement("p");
+fin.innerHTML = "Gracias por realizar tu presupuesto, animate al cambio!";
+document.getElementById("testButton").appendChild(fin);
+}

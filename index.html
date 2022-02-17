@@ -17,14 +17,17 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="./css/styles.css">
+   
+    <!--BOOTSTRAP-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 
 <body>
 
-
-    <img src="./img/logo.jpeg" alt="">
-
+    <div class="logo">
+         <img src="./img/logo.jpeg" alt="">
+    </div>
 
 
 
@@ -51,12 +54,71 @@
         Seras representado a traves del diseño, confort y estilo deseado
     </h2>
 
+    
+
     <!--CARROUSEL DE IMAGENES-->
-   
+    <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" 
+                  name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="slide-item">
+                <img src="/img/carrousel-4.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="/img/carrousel-2.jpg">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="/img/carrousel-3.jpg">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
 
     <!--EQUIPO DE TRABAJO-->
 
+    
+
+    <h2>Nuestro equipo de trabajo</h2>
+
+
     <section class="lider">
+
+        <div id="elec">
+            <p>
+                <img src="./img/electricista.jpg" alt="equipo Tecnico">
+
+                Equipo tecnico
+                <br>
+                <br>
+                Gustavo, Ernesto y Ruben son los encargados de la realizacion de la mano de obra e instalacion
+                de los componentes que requieran tu proyecto
+                <br>
+            </p>
+        </div>
+
+
+
+
         <div id="contain">
             <p>
                 <img src="./img/micaela.jpg" alt="Diseñadora">
@@ -69,23 +131,11 @@
                 Diseñadora y directora de proyecto
 
             </p>
-        </div>    
-    </section>
+        </div>
+        
 
 
-
-    <section class="eqTrabajo">
-        <div id="eq">
-            <p>
-                <img src="./img/electricista.jpg" alt="equipo Tecnico">
-
-                Equipo tecnico
-                <br>
-                <br>
-                Gustavo, Ernesto y Ruben son los encargados de la realizacion de la mano de obra e instalacion
-                de los componentes que requieran tu proyecto
-                <br>
-            </p>
+        <div id="pinto">
 
             <p>
                 <img src="./img/pintores.jpg" alt="Artistas">
@@ -98,8 +148,8 @@
                 <br>
             </p>
         </div>
-    </section>
 
+    </section>
 
     <!--NUESTROS CLIENTES-->
     <section class="clientes">
@@ -194,7 +244,8 @@
         `
     </script>
 
-    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 
 
 
