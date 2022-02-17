@@ -12,136 +12,119 @@ let agregoMt = 0
 let espacio = 0
 
 
+ //PRUEBA CON SWEETALERT2
 
-function saludar() {
-    if (document.getElementById('saludar').value == "" || document.getElementById('saludar').value > 0 ){
-        document.getElementById('mensaje').innerHTML="Correcto";
-    }    
-    }  
 
+ function saludar() {
+    do {
+        nombre = prompt("Ingrese su nombre de usuario")
+
+    } while (nombre == "" || nombre > 0)
+
+    alert("Bienvenido " + nombre + " al simulador de presupuestos de diseño de DecoDega")
+    alert("A continuacion debera seleccionar una serie de items que definiran un presupesto estimado de la realizacion del proyecto")
+}
 
 function tamaño() {
+    do {
+        alert("Que tipo de modificacion desea realizar?")
+        elecOpTam = prompt("Presione 1. 20 a 40mts, 2. 40 a 50mts, 3. Mas de 50mts")
+        let elecTamaño = 0 //valor tamaño elegido para sumar
+        let agregoMt = 0
+        let tamArtisti = 0
+        let esp = 0
 
-    Swal
-    .fire({
-        title: 'Cual es la magnitud de la modificacion a realizar',
-        input: 'select',
-        inputOptions: {
-            uno: 'De 20 a 40mts',
-            dos: 'De 40 a 50mts',
-            tres:'Mas de 50mts',
-        },
-        inputValidator: elecOpTam => {
-            // Si el valor es válido, debes regresar undefined. Si no, una cadena
-            do {        
-            let elecTamaño = 0 //valor tamaño elegido para sumar
-            let agregoMt = 0
-            let tamArtisti = 0
-            let esp = 0
-    
-            switch (elecOpTam) {
-                case 'uno':
-                    elecTamaño = 5000// sumarlo 
-                    esp = 1
-                    break;
-                case 'dos':
-                    elecTamaño = 12000
-                    esp = 2
-                    break;
-                case 'tres':
+        switch (elecOpTam) {
+            case '1':
+                alert("Elijio espacio CHICO")
+                elecTamaño = 5000// sumarlo 
+                esp = 1
+                break;
+            case '2':
+                alert("Elijio espacio MEDIANO")
+                elecTamaño = 12000
+                esp = 2
+                break;
+            case '3':
+                alert("Elijio espacio GRANDE")
+                agregoMt = prompt("Por favor indique los mts2 totales a modificar, se agregara un 2% al precio por mts2 adicional")
+                esp = 3
+                while (agregoMt < 49) {
+                    agregoMt = prompt("Debe colocar mas de 49mts2, por favor vuelva a escribir")
+                }
+                tamArtisti = (agregoMt * 500) //SUMA ARTISTICO
+                elecTamaño = (300 * agregoMt) //CUENTA TAMAÑO
+                break;
 
-                    Swal
-                    .fire({
-                        title: 'Por favor indique los mts2 totales a modificar, se agregara un 2% al precio por mts2 adicional',
-                        input: 'text',
-                        inputValidator: agregoMt => {
-                      esp = 3
-                    while (agregoMt < 49) {
-                        agregoMt = prompt("Debe colocar mas de 49mts2, por favor vuelva a escribir")
-                    }
-                    tamArtisti = (agregoMt * 500) //SUMA ARTISTICO
-                    elecTamaño = (300 * agregoMt) //CUENTA TAMAÑO
-                    }
-                    })
-                    break;
-    
-            }
-            fTamaño = elecTamaño
-            espacio = esp
-    
-        } while (elecOpTam < 1 || elecOpTam > 3 || elecOpTam == "")
-    
-        return fTamaño, espacio, agregoMt
-
+            default:
+                alert("No ingreso una opcion correcta")
         }
-    })
-    
+        fTamaño = elecTamaño
+        espacio = esp
 
+    } while (elecOpTam < 1 || elecOpTam > 3 || elecOpTam == "")
 
+    return fTamaño, espacio, agregoMt
 }
 
 
 
 function modificacion() {
 
-    Swal
-    .fire({
-        title: 'Que tipo de modificacion desea realizar',
-        input: 'select',
-        inputOptions: {
-            uno: 'Artistico',
-            dos: 'Standard (Mobiliario,Luminaria,Pintura)',
-            tres:'Duro (Standard + Obra)',
-        },
-        inputValidator: electModificacion => {
-
-        do {
-        
+    do {
+        alert("Que tipo de modificacion va a realizar?")
         let valorTotalModif = 0
+        electModificacion = prompt("Presione 1. ARTISTICO 2.STANDARD (MOBILIARIO, LUMINARIA, PINTURA) 3.DURO (STANDARD + ALBAÑILERIA)")
         let duro = 0
         let pintura = 0
         let tamArtisti = 0
         let artistica = 0
         let selector = espacio
         switch (electModificacion) {
-            case 'uno':
-            
-                if (selector == uno) {
+            case '1':
+                alert("Elijio modificacion ARTISTICA")
+
+                if (selector == 1) {
                     artistica = 40000 //mod 1
-                } else if (selector == dos) {
+                } else if (selector == 2) {
                     artistica = 80000
-                } else if (selector == tres) {
+                } else if (selector == 3) {
                     artistica = (160000 + tamArtisti) //SELECCION PARA ARTISTICO
                     tamArtisti = (agregoMt * 500) //SUMA ARTISTICO    
                 }
                 valorTotalModif = artistica //PARA SUMA TOTAL SACO ESTA VARIABLE                
                 break;
 
-            case 'dos':
-                if (selector == uno) {
+            case '2':
+                alert("Elijio modificacion STANDARD")
+
+                if (selector == 1) {
                     pintura = 10000 //mod 2
-                } else if (selector == dos) {
+                } else if (selector == 2) {
                     pintura = 20000 //mod 2
-                } else if (selector == tres) {
+                } else if (selector == 3) {
                     pintura = (40000 + tamArtisti) // SELECCION PINTURA STANDARD    
                 }
-                valorTotalModif = pintura //PARA SUMA TOTAL SACO ESTA VARIABLEE
+                valorTotalModif = pintura //PARA SUMA TOTAL SACO ESTA VARIABLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
                 break;
-            case 'tres':
-                    if (selector == uno) {
+            case '3':
+                alert("Elijio modificacion DURO")
+
+                if (selector == 1) {
                     pintura = 10000 //mod 2
                     duro = (3000 * 10)
-                } else if (selector == dos) {
+                } else if (selector == 2) {
                     pintura = 20000 //mod 2
                     duro = (3000 * 15)
-                } else if (selector == tres) {
+                } else if (selector == 3) {
                     pintura = (40000 + tamArtisti) // SELECCION PINTURA STANDARD    
                     duro = (3000 * 20)
                 }
                 valorTotalModif = pintura + duro
                 break;
-
+            default:
+                alert("No ingreso una opcion correcta")
         }
 
         fModif = valorTotalModif
@@ -150,8 +133,8 @@ function modificacion() {
 
     return fModif;
 }
-    })
-}
+
+console.log(fModif)
 
 function calidad() {
     let cal = 0
