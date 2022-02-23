@@ -48,39 +48,60 @@
     <h1>Simulador de presupuestos</h1>
 
     <div>
-        <p>Haz click para comenzar con el simulador de presupuestos</p>
+        <!-- <p>Haz click para ingresar tu usuario</p>
 
-        <button id='testButton'> Iniciar simulador </button>
+        <button id='testButton'> Comprobar usuario </button>
+
+        <p>Haz click para seleccionar un tamaño</p>
+        <button id='testButton1'> Comprobar tamaño </button>
+        <p>Su nombre es:</p>
+        <input type="text" id="name" value=""> -->
+        <!-- <button id='testButton2'> Comprobar usuario </button>
+        <button id='testButton3'> Comprobar usuario </button>
+        <button id='testButton4'> Comprobar usuario </button> -->
     </div>
 
     <div class="saludo">
-        <label> Ingrese su nombre</label>
-        <input type="text" id="saludar"/>
-        <p id="mensaje"></p> 
-        <button onclick="saludar()">Aceptar</button>
+        <p>Haz click para ingresar tu usuario</p>
+        <button id='testButton'> Comprobar usuario</button>
+        <p id="name"></p>
+        <!-- <p id="mensaje"></p>  -->
+        <!-- <button onclick="saludar()">Aceptar</button> -->
     </div>
 
     
     <div class="tamaño">
 
-        <p>Que tipo de modificacion desea realizar? Teniendo en cuenta de 20 a 40 (Chico), 40 a 50mts (Mediano) y mas de 50mts (Grande)</p>
+        <p>Que tamaño de modificacion desea realizar? Teniendo en cuenta de 20 a 40 (Chico), 40 a 50mts (Mediano) y mas de 50mts (Grande)</p>
 
-        <select id="opciones" name="opciones">
-            <option value="1">Chico</option>
-            <option value="2">Mediano</option>
-            <option value="3">Grande</option>
-        </select>
-        <button onclick="tamaño()">Aceptar</button>
+        <button id='testButton1'> Seleccionar tamaño</button>
+        <p id="tam"></p>
+        <!-- <button onclick="tamaño()">Aceptar</button> -->
     </div>
 
 
 
     <div class="tipo">
 
+        <p>Que tipo de modificacion desea realizar? </p>
+
+        <button id='testButton2'> Seleccionar tipo</button>
+        <p id="tip"></p> <!--ACA INSERTO EL MENSAJE LUEGO DE ELECCION-->
+        <!-- <button onclick="tamaño()">Aceptar</button> -->
+
     </div>
 
 
 
+    <div class="total">
+
+        <p>Seleccione para mostrar costos </p>
+
+        <button id='testButton3'> Calcular costos</button>
+        
+        <!-- <button onclick="tamaño()">Aceptar</button> -->
+
+    </div>
 
 
 
@@ -114,7 +135,7 @@
 
 
 
-<script type="text/javascript" language="javascript" src= "presupuesto.js" ></script>
+<script type="text/javascript" language="javascript" src= "pPresupuesto.js" ></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
    
 
