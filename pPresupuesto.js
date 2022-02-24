@@ -450,29 +450,23 @@ function sumarTotal() {
     Swal.fire(`El monto total aproximado es ${costo}  Animate al cambio!`) //cartel utilozando variable
 
     
-                
-          
+              
 }
 
 
 
+//Desestructuracion de array
+//el array se compone de 5 posiciones
 
-/*//Desestructuracion de array
+//TENGO QUE DESESTRUCTURAR TAMBIEN LOS OBJETOS, LUEGO DE DESESTRUCTURAR EL ARRAY?
+/*
+const [a, b, c] = resumen
 
-const [nom, tam, ti] = resumen
-
-
-
-function verPresupuesto (nom, tam, ti){
+function verPresupuesto ([varA,varB,varC]){
     
-    const monto =  (tam + tip)
-    Swal.fire(`${nom} el monto total aproximado es ${monto}  Animate al cambio!`)
-
+    const monto =  (varB + varC)
+    Swal.fire(`${varA} el monto total aproximado es ${monto}`)
 }*/
-
-
-
-
 
 let button = document.getElementById('testButton');
 let button1 = document.getElementById('testButton1');
@@ -488,4 +482,4 @@ button2.addEventListener('click', modificacion);
 button3.addEventListener('click', calidad);
 button4.addEventListener('click', cantidad);
 button5.addEventListener('click', sumarTotal);
-/* button6.addEventListener('click', verPresupuesto);*/
+/*button6.addEventListener('click', verPresupuesto);*/
