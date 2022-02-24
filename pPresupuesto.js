@@ -4,7 +4,12 @@ let nombre = ""
 let cant = 0
 let fTamaño = 0
 let fModif = 0
+let fCal= 0
 let resumen = [];
+let tipoElec = ""
+let tipoCal= ""
+
+
 
 
 function saludar() {
@@ -22,11 +27,14 @@ function saludar() {
             inputValidator: nombre => {
                 // Si el valor es válido, debes regresar undefined. Si no, una cadena
                 
+
+                (nombre == "" || nombre > 0) ? "Por favor escribe tu nombre" : undefined
+/*
                 if (nombre == "" || nombre > 0) {
                     return "Por favor escribe tu nombre";
                 } else {
                     return undefined;
-                }
+                }*/
             }
         })
         .then(resultado => {
@@ -75,14 +83,9 @@ function tamaño() {
             inputValidator: elecOpTam => {
                 // Si el valor es válido, debes regresar undefined. Si no, una cadena
 
-                //valor tamaño elegido para sumar
-                let agregoMt = 0
-                let tamArtisti = 0
-                let esp = 0
-
                 switch (elecOpTam) {
                     case 'uno':
-                        elecTamaño = 5000// sumarlo
+                        elecTamaño = 5000
                         tamElec = "Chico"
                         break;
                     case 'dos':
@@ -96,13 +99,17 @@ function tamaño() {
                 }
 
                 return new Promise(function (resolve, reject) {
+                    
+                    elecOpTam != undefined ? resolve() : reject('Seleccione una opcion)')
+                    
+                    /*
                     if (elecOpTam != undefined) {
 
                         resolve()
 
                     } else {
                         reject('Seleccione una opcion)')
-                    }
+                    }*/
                 })
 
 
@@ -139,15 +146,7 @@ function tamaño() {
 
 function modificacion() {
 
-    /*
-    const co= localStorage.getItem('resumen')
-    const comp= JSON.parse(co)
-    const comps= comp[1].tamaño
-    console.log(comps)
-    console.log(co)
-    console.log(comp)
-    */
-   
+    let valorTotalModif = 0
 
     Swal
         .fire({
@@ -162,39 +161,75 @@ function modificacion() {
             inputPlaceholder: 'Seleccione un tipo de modificacion',
             inputValidator: electModificacion => {
         
+                const co= localStorage.getItem('resumen')
+                const comp= JSON.parse(co)
+                const comps= comp[1].tamaño
+                
+
                 switch (electModificacion) {
+                
+                case 'uno':
 
+                    comps == 5000 && (artistica = 40000)
+                    comps == 12000 && (artistica = 80000)
+                    comps == 18000 && (artistica = 160000)
 
-                    case 'uno':
+                    /*
+                    if (comps == 5000) {
+                        artistica = 40000 //mod 1
+                    } else if (comps == 12000) {
+                        artistica = 80000
+                    } else if (comps == 18000) {
+                        artistica = (160000) //SELECCION PARA ARTISTICO   
+                    }*/
+                    tipoElec= 'Artistico'
+                   valorTotalModif = artistica //PARA SUMA TOTAL SACO ESTA VARIABLE                
+                   console.log(valorTotalModif) 
+                   break;
+    
+                case 'dos':
+    
+                    comps == 5000 && (pintura = 10000)
+                    comps == 12000 && (pintura = 20000)
+                    comps == 18000 && (pintura = 40000)
+                    tipoElec= 'Standard (Mobiliario,Luminaria,Pintura)'
+                    valorTotalModif = pintura 
+                    
+                    break;
+                case 'tres':
+                        
+                    comps == 5000 && ((pintura = 10000) && (duro = 3000*10))
+                    comps == 12000 && ((pintura = 20000) && (duro = 3000*15))
+                    comps == 18000 && ((pintura = 40000) && (duro = 3000*20))
+/*
+                    if (comps == 5000) {
+                        pintura = 10000 //mod 2
+                        duro = (3000 * 10)
+                    } else if (comps == 12000) {
+                        pintura = 20000 //mod 2
+                        duro = (3000 * 15)
+                    } else if (comps == 18000) {
+                        pintura = (40000) // SELECCION PINTURA STANDARD    
+                        duro = (3000 * 20)
+                    }*/
 
-                        pintura = 40000
-                        valorTotalModif = pintura //PARA SUMA TOTAL SACO ESTA VARIABLE              
-                        tipoElec= 'Artistico'  
-                        break;         
-
-                    case 'dos':
-
-                        pintura= 60000
-                        valorTotalModif = pintura //PARA SUMA TOTAL SACO ESTA VARIABLEE*/
-                        tipoElec= 'Standard (Mobiliario,Luminaria,Pintura)'
-                        break;
-                    case 'tres':
-
-                        pintura= 60000
-                        duro= 50000
-                        tipoElec= 'Duro (Standard + Obra)'
-                        valorTotalModif = pintura + duro
-                        break;
+                    tipoElec= 'Duro (Standard + Obra)'
+                    valorTotalModif = pintura + duro
+                    
+                    break;
                 }
 
                 return new Promise(function (resolve, reject) {
-                    if (electModificacion != undefined) {
+             
+                    electModificacion != undefined ? resolve() : reject('Seleccione una opcion)')
+             
+             /*       if (electModificacion != undefined) {
 
                         resolve()
 
                     } else {
                         reject('Seleccione una opcion)')
-                    }
+                    }*/
                 })
 
 
@@ -231,40 +266,226 @@ function modificacion() {
 }
 
 
+function calidad() {
+
+    let cal = 0
+    let valorCal = 5
+    let tCal = ""
+    
+    
+    Swal
+        .fire({
+
+            title: 'Que calidad de materiales desea?',
+            input: 'select',
+            inputOptions: {
+                'uno': 'Standard',
+                'dos': 'Media',
+                'tres': 'Alta',
+            },
+            inputPlaceholder: 'Seleccione un tipo de calidad',
+            inputValidator: electCalidad => {                
+
+                switch (electCalidad) {
+                
+                case 'uno':
+                    cal = 1
+                    tCal= 'Standard'
+                   break;
+    
+                case 'dos':
+                    cal=2
+                    tCal= 'Media'
+                    break;
+                case 'tres':
+                    cal = 3
+                    tCal= 'Alta'
+                    break;
+                }
+                    valorCal= cal
+                return new Promise(function (resolve, reject) {
+                   
+                   electCalidad != undefined ? resolve() : reject('Seleccione una opcion)')
+                   /*
+                    if (electCalidad != undefined) {
+
+                        resolve()
+
+                    } else {
+                        reject('Seleccione una opcion)')
+                    }*/
+                })
+
+
+            }
+
+        })
+        .then(resultado => {
+            if (resultado.value) {
+                fCal = valorCal;
+                newCal = tCal;
+                Swal.fire(`Modificacion elegida: ${newCal}`)
+                let calid = document.getElementById("cal");
+                calid.innerHTML = `La calidad elegida es ${newCal}`;
+                let tipoCal = {
+                    calidad: fCal,// guardo valor de lo elegido en $$           
+                }
+                resumen.splice(3, 1, tipoCal)
+                localStorage.setItem("resumen", JSON.stringify(resumen))
+            }
+            if (resultado.value == undefined) {
+                fCal = valorCal;
+                newCal = tCal;
+                Swal.fire(`Modificacion elegida: ${newCal}`)
+                let calid = document.getElementById("cal");
+                calid.innerHTML = `La calidad elegida es ${newCal}`;
+                let tipoCal = {
+                    calidad: fCal,// guardo valor de lo elegido           
+                }
+                resumen.push(tipoCal)
+                localStorage.setItem("resumen", JSON.stringify(resumen))
+            }
+    {}        });
+
+
+
+}
+
+function cantidad() {
+    
+        
+
+
+    Swal
+        .fire({
+
+            title: 'Que calntidad de productos/accesorios desea utilizar?',
+            input: 'select',
+            inputOptions: {
+                'uno': '5 a 10',
+                'dos': '11 a 15',
+                'tres': '16 a 20',
+            },
+            inputPlaceholder: 'Seleccione una cantidad',
+            inputValidator: electCantidad => {                
+
+                switch (electCantidad) {
+                    
+                    case 'uno':
+                            cantt=1
+                            elecCant= '5 a 10 productos' 
+                            break;
+                    case 'dos':
+                            elecCant = ' 11 a 15 productos'
+                            cantt= 2
+                            break;
+                    case 'tres':
+                            cantt=3
+                            elecCant = '16 a 20 productos'
+                            break;
+                    
+                    }
+                    
+
+                return new Promise(function (resolve, reject) {
+                    if (electCantidad != undefined) {
+
+                        resolve()
+
+                    } else {
+                        reject('Seleccione una opcion)')
+                    }
+                })
+            }
+
+        })
+        .then(resultado => {
+            if (resultado.value) {
+                fCant=cantt
+                newCan = elecCant;
+                Swal.fire(`Cantidad elegida: ${newCan}`)
+                let cantid = document.getElementById("cant");
+                cantid.innerHTML = `La cantidad elegida es ${newCan}`;
+                let tipoCant = {
+                    cantidad: fCant,// guardo valor de lo elegido en $$           
+                }
+                resumen.splice(4, 1, tipoCant)
+                localStorage.setItem("resumen", JSON.stringify(resumen))
+            }
+            if (resultado.value == undefined) {
+                fCant=cantt
+                newCan = elecCan;
+                Swal.fire(`Cantidad elegida: ${newCan}`)
+                let calid = document.getElementById("cant");
+                calid.innerHTML = `La cantidad elegida es ${newCan}`;
+                let tipoCant = {
+                    cantidad: fCant,// guardo valor de lo elegido           
+                }
+                resumen.push(tipoCant)
+                localStorage.setItem("resumen", JSON.stringify(resumen))
+            }
+    {}        });
+
+}
+
+
+
 function sumarTotal() {
 
     const co= localStorage.getItem('resumen');
     const comp= JSON.parse(co);
     const t= comp[1].tamaño
     const m= comp[2].tipo
-    console.log(t)
-    console.log(m)
-    const sumaTotal= t + m
+    const c= comp[3].calidad
+    const ca= comp[4].cantidad
+
+    const sumaTotal= (t + m)
+    let a=0
     
+    c === 2  && (a = ((sumaTotal* 30) / 100))
+    c === 3 &&  (a = ((sumaTotal* 50) / 100))
+
+    const costo= sumaTotal + a
     
-    Swal.fire(`El monto total aproximado es ${sumaTotal}`) //cartel utilozando variable
+    Swal.fire(`El monto total aproximado es ${costo}  Animate al cambio!`) //cartel utilozando variable
+
+    
                 
           
 }
+
+
+
+
+/*//Desestructuracion de array
+
+const [nom, tam, ti] = resumen
+
+
+
+function verPresupuesto (nom, tam, ti){
     
+    const monto =  (tam + tip)
+    Swal.fire(`${nom} el monto total aproximado es ${monto}  Animate al cambio!`)
+
+}*/
+
+
+
+
 
 let button = document.getElementById('testButton');
 let button1 = document.getElementById('testButton1');
 let button2 = document.getElementById('testButton2');
 let button3 = document.getElementById('testButton3');
+let button4 = document.getElementById('testButton4');
+let button5 = document.getElementById('testButton5');
+/*let button6 = document.getElementById('testButton6');*/
 
 button.addEventListener('click', saludar);
 button1.addEventListener('click', tamaño);
 button2.addEventListener('click', modificacion);
-button3.addEventListener('click', sumarTotal);
-
-
-/* button2.addEventListener('click', saludar);
-button3.addEventListener('click', saludar); */
-
-//inserto mensaje luego de la realizacion del presupuesto
-/* function final (){
-const fin = document.createElement("p");
-fin.innerHTML = "Gracias por realizar tu presupuesto, animate al cambio!";
-document.getElementById("testButton").appendChild(fin);
-} */
+button3.addEventListener('click', calidad);
+button4.addEventListener('click', cantidad);
+button5.addEventListener('click', sumarTotal);
+/* button6.addEventListener('click', verPresupuesto);*/

@@ -1,0 +1,53 @@
+.presupuesto{
+
+    display: flex;
+    width: 40%;
+    height: 400px;
+    flex-flow: column wrap;  
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 50px;
+    -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -43px -41px 50px 44px rgba(133,255,228,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -43px -41px 50px 44px rgba(133,255,228,0);
+
+    .saludo{
+
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+
+
+        #testButton{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                -moz-transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+
+                
+                border-radius: 50px;
+                font-style: oblique;
+
+
+                #name{
+
+
+                }
+
+        }
+    }
+
+
+
+}

@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap" rel="stylesheet">
 
-  
+
     <!--CSS-->
     <link rel="stylesheet" href="./css/styles.css">
 
@@ -46,63 +46,82 @@
     </header>
 
     <h1>Simulador de presupuestos</h1>
+    <section class="presupuesto">
 
-    <div>
-        <!-- <p>Haz click para ingresar tu usuario</p>
+        <div class="saludo">
+            <p>Haz click para ingresar tu usuario</p>
+            <button id='testButton'> Comprobar usuario</button>
+            <p id="name"></p>
+        </div>
 
-        <button id='testButton'> Comprobar usuario </button>
 
-        <p>Haz click para seleccionar un tamaño</p>
-        <button id='testButton1'> Comprobar tamaño </button>
-        <p>Su nombre es:</p>
-        <input type="text" id="name" value=""> -->
-        <!-- <button id='testButton2'> Comprobar usuario </button>
-        <button id='testButton3'> Comprobar usuario </button>
-        <button id='testButton4'> Comprobar usuario </button> -->
-    </div>
+        <div class="tamaño">
 
-    <div class="saludo">
-        <p>Haz click para ingresar tu usuario</p>
-        <button id='testButton'> Comprobar usuario</button>
-        <p id="name"></p>
-        <!-- <p id="mensaje"></p>  -->
-        <!-- <button onclick="saludar()">Aceptar</button> -->
-    </div>
+            <p>Que tamaño de modificacion desea realizar? Teniendo en cuenta de 20 a 40 (Chico), 40 a 50mts (Mediano) y
+                mas de 50mts (Grande)</p>
 
-    
-    <div class="tamaño">
-
-        <p>Que tamaño de modificacion desea realizar? Teniendo en cuenta de 20 a 40 (Chico), 40 a 50mts (Mediano) y mas de 50mts (Grande)</p>
-
-        <button id='testButton1'> Seleccionar tamaño</button>
-        <p id="tam"></p>
-        <!-- <button onclick="tamaño()">Aceptar</button> -->
-    </div>
+            <button id='testButton1'> Seleccionar tamaño</button>
+            <p id="tam"></p>
+            <!-- <button onclick="tamaño()">Aceptar</button> -->
+        </div>
 
 
 
-    <div class="tipo">
+        <div class="tipo">
 
-        <p>Que tipo de modificacion desea realizar? </p>
+            <p>Que tipo de modificacion desea realizar? </p>
 
-        <button id='testButton2'> Seleccionar tipo</button>
-        <p id="tip"></p> <!--ACA INSERTO EL MENSAJE LUEGO DE ELECCION-->
-        <!-- <button onclick="tamaño()">Aceptar</button> -->
+            <button id='testButton2'> Seleccionar tipo</button>
+            <p id="tip"></p>
+            <!--ACA INSERTO EL MENSAJE LUEGO DE ELECCION-->
+            <!-- <button onclick="tamaño()">Aceptar</button> -->
 
-    </div>
+        </div>
+
+
+        <div class="calidad">
+
+            <p>Seleccione para elegir la calidad de los productos </p>
+
+            <button id='testButton3'> Elegir calidad</button>
+            <p id="cal"></p>
+            <!--ACA INSERTO EL MENSAJE LUEGO DE ELECCION-->
+
+            <!-- <button onclick="tamaño()">Aceptar</button> -->
+
+        </div>
+
+        <div class="cantidad">
+
+            <p>Seleccione para elegir la cantidad de los productos </p>
+
+            <button id='testButton4'> Elegir cantidad</button>
+            <p id="cant"></p>
+            <!--ACA INSERTO EL MENSAJE LUEGO DE ELECCION-->
+
+            <!-- <button onclick="tamaño()">Aceptar</button> -->
+
+        </div>
 
 
 
-    <div class="total">
+        <div class="total">
 
-        <p>Seleccione para mostrar costos </p>
+            <button id='testButton5'> Calcular costos</button>
 
-        <button id='testButton3'> Calcular costos</button>
-        
-        <!-- <button onclick="tamaño()">Aceptar</button> -->
+        </div>
+        <!--
+        <div class="ver">
 
-    </div>
+            <button id='testButton6'> Ver presupuesto</button>
 
+        </div>
+
+        -->
+
+
+
+    </section>
 
 
 
@@ -129,15 +148,15 @@
 
         </div>
 
-        
+
     </footer>
 
 
 
 
-<script type="text/javascript" language="javascript" src= "pPresupuesto.js" ></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
-   
+    <script type="text/javascript" language="javascript" src="pPresupuesto.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 </body>
