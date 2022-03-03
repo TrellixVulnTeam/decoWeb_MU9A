@@ -1,0 +1,11 @@
+[
+
+    {"id": 1, "name": "Jarron", "price": 1500},
+    {"id": 2, "name": "Mesa", "price": 2500},
+    {"id": 3, "name": "Lampara", "price": 500},
+    {"id": 4, "name": "Mesa de luz", "price": 1200},
+    {"id": 5, "name": "Silla", "price": 700}
+]
+
+
+
