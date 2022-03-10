@@ -1,5 +1,5 @@
 const lista = document.getElementById('list')
-fetch('/data.json')
+fetch('/datos.json')
 .then ((response) => response.json())
     .then((data) => {
         data.forEach((product) => {

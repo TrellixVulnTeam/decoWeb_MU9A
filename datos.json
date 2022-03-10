@@ -1,10 +1,8 @@
 [
 
-    {"id": 1, "name": "Jarron", "price": 1500},
-    {"id": 2, "name": "Mesa", "price": 2500},
-    {"id": 3, "name": "Lampara", "price": 500},
-    {"id": 4, "name": "Mesa de luz", "price": 1200},
-    {"id": 5, "name": "Silla", "price": 700}
+    {"nombre": "Equipo Tecnico <br> <br> Gustavo, Ernesto y Ruben son los encargados de la realizacion de la mano de obra e instalacion de los componentes que requieran tu proyecto"},
+    {"nombre":  "Micaela Degastaldi <br> <br> Diseñadora de interiores de la Escuela Decomobi <br> <br> Directora de proyecto"},
+    {"nombre": "Equipo Artistico <br> <br> Gise y Pachu quienes relizan las obras artisticas mas espectaculares"}
 ]
 
 
