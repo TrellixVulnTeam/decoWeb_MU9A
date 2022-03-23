@@ -1,0 +1,18 @@
+
+#products{
+    display: flex;
+    flex-direction: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+
+#productsOnCart{
+    display: flex;
+    flex-direction: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 50px;
+
+}

@@ -1,12 +1,13 @@
+@charset "UTF-8";
 .contacto {
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 700px; }
+  height: 500px; }
   .contacto .form {
     display: flex;
     width: 60%;
-    height: 400px;
+    height: 200px;
     margin: 50px;
     flex-flow: row wrap;
     align-items: center;
@@ -19,7 +20,9 @@
       display: flex;
       width: 300px;
       height: 50px;
-      margin: 10px; }
+      margin: 10px;
+      align-items: center;
+      text-align: center; }
 
 h2 {
   display: flex;
@@ -31,6 +34,19 @@ h2 {
   color: #000;
   margin-top: 50px;
   margin-bottom: 50px; }
+
+h3 {
+  display: flex;
+  padding: 50px 10px;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+  letter-spacing: 3px;
+  color: #000;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: burlywood;
+  font-weight: 800; }
 
 #imgs {
   display: flex;
@@ -62,15 +78,13 @@ h2 {
   display: flex;
   flex-direction: row wrap;
   margin-bottom: 100px;
-  margin-top: 300px;
+  margin-top: 100px;
   width: 100%;
   height: 200px;
-  justify-content: space-between; }
+  justify-content: space-around; }
   .clientes #cli1 {
     display: flex;
-    justify-content: center;
-    margin-left: 10px;
-    margin-right: 10px; }
+    justify-content: center; }
     .clientes #cli1 p {
       font-weight: 500;
       font-size: medium;
@@ -202,6 +216,19 @@ li:nth-child(3) .slide-circulo {
   z-index: 9999;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0); }
 
+#products {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+  justify-content: space-evenly; }
+
+#productsOnCart {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 50px; }
+
 html {
   font-size: 62.5%; }
 
@@ -212,7 +239,7 @@ body {
 
 .logo img {
   width: 30%;
-  height: 300px;
+  height: 400px;
   margin-left: 35%;
   margin-right: 35%;
   justify-items: center; }
@@ -240,20 +267,22 @@ header {
 
 footer {
   background: #f6dde8;
+  background: linear-gradient(90deg, #f6dde8 35%, #e0bebe 50%);
   display: flex;
   flex-direction: row wrap;
   width: 100%;
-  height: 200px;
-  border-radius: 500px; }
+  height: 100px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
   footer .redes {
     width: 100%;
     display: flex;
     flex-direction: row wrap;
+    align-items: center;
     justify-content: space-around; }
     footer .redes p {
       display: flex;
-      align-items: flex-end;
       font-size: small;
+      color: #302d2d;
       font-weight: 400;
       text-align: center; }
     footer .redes a {
@@ -262,39 +291,165 @@ footer {
       footer .redes a img {
         display: flex;
         width: 150px;
-        height: 150px;
+        height: 50px;
         border-radius: 150px; }
+
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 4rem;
+  width: 30% auto;
+  height: 50px;
+  margin: 0px;
+  color: burlywood; }
 
 .presupuesto {
   display: flex;
-  width: 40%;
-  height: 400px;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  margin-left: 30%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  text-align: center;
+  margin: 50px; }
+
+.saludo {
+  display: flex;
+  width: 35%;
+  flex-direction: column;
   border-radius: 50px;
-  -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -43px -41px 50px 44px rgba(133, 255, 228, 0);
-  box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -43px -41px 50px 44px rgba(133, 255, 228, 0); }
-  .presupuesto .saludo {
+  text-align: justify;
+  align-items: center; }
+  .saludo p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 700;
-    justify-content: center;
-    align-items: center;
-    align-content: center; }
-    .presupuesto .saludo #testButton {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      -moz-transform: scale(1.1);
-      -webkit-transform: scale(1.1);
-      -o-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
-      border-radius: 50px;
-      font-style: oblique; }
+    color: black; }
+  .saludo #testButton {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 9px;
+    border-radius: 18px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+    box-shadow: black 5px 5px 15px 5px;
+    border: 2px solid blanchedalmond;
+    display: inline-block; }
+  .saludo :hover {
+    background: #c479c1; }
+  .saludo :active {
+    background: #df80dc; }
+
+.tamaño {
+  margin: 35px; }
+  .tamaño p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 50px; }
+  .tamaño #testButton1 {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 9px;
+    border-radius: 18px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+    box-shadow: black 5px 5px 15px 5px;
+    border: 2px solid blanchedalmond;
+    display: inline-block; }
+
+.tipo {
+  margin: 35px; }
+  .tipo p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 50px; }
+  .tipo #testButton2 {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 9px;
+    border-radius: 18px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+    box-shadow: black 5px 5px 15px 5px;
+    border: 2px solid blanchedalmond;
+    display: inline-block; }
+
+.calidad {
+  margin: 35px; }
+  .calidad p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 50px; }
+  .calidad #testButton3 {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 9px;
+    border-radius: 18px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+    box-shadow: black 5px 5px 15px 5px;
+    border: 2px solid blanchedalmond;
+    display: inline-block; }
+
+.cantidad {
+  margin: 35px; }
+  .cantidad p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 50px; }
+  .cantidad #testButton4 {
+    color: white;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 9px;
+    border-radius: 18px;
+    font-family: Georgia, serif;
+    font-weight: 900;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+    box-shadow: black 5px 5px 15px 5px;
+    border: 2px solid blanchedalmond;
+    display: inline-block; }
+
+.total #testButton5 {
+  color: white;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 9px;
+  border-radius: 18px;
+  font-family: Georgia, serif;
+  font-weight: 900;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(to right, blanchedalmond 0%, blanchedalmond 50%, #5e545f 100%);
+  box-shadow: black 5px 5px 15px 5px;
+  border: 2px solid blanchedalmond;
+  display: inline-block; }

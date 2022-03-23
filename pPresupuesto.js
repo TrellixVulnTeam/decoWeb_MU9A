@@ -42,7 +42,7 @@ function saludar() {
                 let nombre = resultado.value;  // guardo valor en variable
                 Swal.fire(`Bienvenido: ${nombre}`) //cartel utilozando variable
                 let name = document.getElementById("name"); //guardo valor del id del html en una variable para trabajar aca
-                name.innerHTML = `Su nombre es ${nombre}`;// uso inner para insertarlo en cartel sweet
+                /*name.innerHTML = `Su nombre es ${nombre}`;*/// uso inner para insertarlo en cartel sweet
                 let nombreCliente = {//creo variable para guardar en arrary?
                     name: nombre,
                 }
@@ -51,8 +51,8 @@ function saludar() {
             }
             if (resultado.value == undefined) {
                 let nombre = resultado.value;
-                let name = document.getElementById("name");
-                name.innerHTML = `Su nombre es ${nombre}`;
+                let name = document.getElementById("name");/*
+                name.innerHTML = `Su nombre es ${nombre}`;*/
                 let nombreCliente = {
                     name: nombre,
                 }
@@ -452,21 +452,6 @@ function sumarTotal() {
     
               
 }
-
-
-
-//Desestructuracion de array
-//el array se compone de 5 posiciones
-
-//TENGO QUE DESESTRUCTURAR TAMBIEN LOS OBJETOS, LUEGO DE DESESTRUCTURAR EL ARRAY?
-/*
-const [a, b, c] = resumen
-
-function verPresupuesto ([varA,varB,varC]){
-    
-    const monto =  (varB + varC)
-    Swal.fire(`${varA} el monto total aproximado es ${monto}`)
-}*/
 
 let button = document.getElementById('testButton');
 let button1 = document.getElementById('testButton1');
